@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numero = parseInt(prompt("Digite um número inteiro positivo:"));
+
+        function calcularFatorial(numero) {
+            if (numero === 0 || numero === 1) {
+                return 1;
+            } else {
+                return numero * calcularFatorial(numero - 1);
+            }
+        }
+
+        function gerarSequenciaFibonacci(numero) {
+            let fibonacci = [0, 1];
+            for (let i = 2; i <= numero; i++) {
+                fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+            }
+            return fibonacci.slice(0, numero + 1);
+        }
+
+
+
+        if (numero >= 0) {
+            let fatorial = calcularFatorial(numero);
+            let sequenciaFibonacci = gerarSequenciaFibonacci(numero);
+
+            console.log("Fatorial de", numero + ":", fatorial);
+            console.log("Sequência de Fibonacci até", numero + ":", sequenciaFibonacci);
+        } else {
+            console.log("Por favor, insira um número inteiro positivo.");
+        }
+    </script>
+</body>
+
+</html>
